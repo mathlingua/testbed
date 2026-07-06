@@ -9,8 +9,9 @@ Id: "82a246f0-023f-4a1c-b9f5-6b9be328316c"
 [\set]
 Describes: X
 satisfies:
-. \axiom.of.extension
-. \axiom.of.specification
+. forAll: Y is \set
+  then: \axiom.of.extension#given{A := X; B := Y}
+. \axiom.of.specification#given{X}
 . \axiom.of.empty.set
 Enables:
 . capability: x_ "in" X :-> \\abstract
