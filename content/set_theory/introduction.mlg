@@ -1,6 +1,17 @@
-SectionTitle: "Motivation and Russell's Paradox"
-Id: "3fd72a01-462d-4d46-880d-b5027d2957a8"
+Title: "Zermelo-Frankel Set Theory"
+Id: "0753f0a4-9924-46a7-b415-147dbc35c077"
 
+
+Text: "
+A basic axiomatic development of Zermelo-Fraenkel and Choice set theory,
+commonly abbreviated ZFC. This work is aimed in particular at students of
+mathematics who are familiar with set theory from a naive perspective and
+are interested in the underlying axiomatic development. It quickly reviews some
+basic concepts of set theory before focusing on the set theoretic definition of
+the natural numbers and the equivalence of the axiom of choice, Zorn's lemma,
+and the well ordering principle.
+"
+Id: "fce2c58a-edeb-4af2-b2a3-c1f67b8d31d0"
 
 Text: "
 Before beginning with the axioms of Zermelo-Fraenkel set theory, it is

@@ -1,18 +1,5 @@
-front_matter.mlg
-motivation.mlg
-axioms.mlg
-subsets.mlg
-operations.mlg
-power_and_pairs.mlg
-relations_functions.mlg
-peano_infinity.mlg
-transitive.mlg
-recursion.mlg
-arithmetic.mlg
-order.mlg
-relations_equivalence.mlg
-finite.mlg
-choice.mlg
-partial_order.mlg
-zorn.mlg
-well_ordering.mlg
+introduction.mlg
+set_theory
+people.mlg
+resources.mlg
+appendix.mlg -> HIDDEN
