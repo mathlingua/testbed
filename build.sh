@@ -1,2 +1,2 @@
-mlgx export --output docs --base-path /testbed/
+cargo run -- export --force --output docs --base-path /testbed/
 
