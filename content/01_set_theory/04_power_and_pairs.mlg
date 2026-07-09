@@ -2,7 +2,7 @@ SubsectionTitle: "The Power Set, Ordered Pairs, Relations, and Functions"
 Id: "d000b46c-059b-4e87-98fc-e6827ee5a138"
 
 
-[\power.set{X}]
+[\set.theoretic.power.set{X}]
 Defines: P is \set
 when: X is \set
 expresses:
@@ -17,8 +17,8 @@ Documented:
 Id: "dfc8cab3-42ba-44b3-8da0-b58717abeb61"
 
 
-[\ordered.pair:of{a}:and{b}]
-Defines: p := \pair:of{\singleton{a}}:and{\pair:of{a}:and{b}} is \set
+[\set.theoretic.ordered.pair:of{a}:and{b}]
+Defines: p := \set.theoretic.pair:of{\set.theoretic.singleton{a}}:and{\set.theoretic.pair:of{a}:and{b}} is \set
 when: a, b is \set
 Documented:
 . called: "ordered pair of $a?$ and $b?$"
@@ -29,7 +29,7 @@ Id: "5c0b41a7-2272-454b-925a-0da28aa822d4"
 
 Theorem:
 given: a, b, c, d is \set
-then: \ordered.pair:of{a}:and{b} = \ordered.pair:of{c}:and{d}
+then: \set.theoretic.ordered.pair:of{a}:and{b} = \set.theoretic.ordered.pair:of{c}:and{d}
 iff:
 . a = c
 . b = d
@@ -49,7 +49,7 @@ expresses:
       suchThat:
       . a "in" A
       . b "in" B
-      . z = \ordered.pair:of{a}:and{b}
+      . z = \set.theoretic.ordered.pair:of{a}:and{b}
     iff: z "in" P
 Documented:
 . called: "cartesian product of $A?$ and $B?$"

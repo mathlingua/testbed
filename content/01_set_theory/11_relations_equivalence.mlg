@@ -13,7 +13,7 @@ satisfies:
   where:
   . a "in" X
   then:
-  . \ordered.pair:of{a}:and{a} "in" R
+  . \set.theoretic.ordered.pair:of{a}:and{a} "in" R
 Documented:
 . adjective: "reflexive"
 . written: "\operatorname{reflexive}"
@@ -31,9 +31,9 @@ satisfies:
   . b "in" X
   then:
   . if:
-    . \ordered.pair:of{a}:and{b} "in" R
+    . \set.theoretic.ordered.pair:of{a}:and{b} "in" R
     then:
-    . \ordered.pair:of{b}:and{a} "in" R
+    . \set.theoretic.ordered.pair:of{b}:and{a} "in" R
 Documented:
 . adjective: "symmetric"
 . written: "\operatorname{symmetric}"
@@ -52,8 +52,8 @@ satisfies:
   then:
   . if:
     . allOf:
-      . \ordered.pair:of{a}:and{b} "in" R
-      . \ordered.pair:of{b}:and{a} "in" R
+      . \set.theoretic.ordered.pair:of{a}:and{b} "in" R
+      . \set.theoretic.ordered.pair:of{b}:and{a} "in" R
     then:
     . a = b
 Documented:
@@ -75,10 +75,10 @@ satisfies:
   then:
   . if:
     . allOf:
-      . \ordered.pair:of{a}:and{b} "in" R
-      . \ordered.pair:of{b}:and{c} "in" R
+      . \set.theoretic.ordered.pair:of{a}:and{b} "in" R
+      . \set.theoretic.ordered.pair:of{b}:and{c} "in" R
     then:
-    . \ordered.pair:of{a}:and{c} "in" R
+    . \set.theoretic.ordered.pair:of{a}:and{c} "in" R
 Documented:
 . adjective: "transitive"
 . written: "\operatorname{transitive}"

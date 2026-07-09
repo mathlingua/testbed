@@ -25,7 +25,7 @@ Id: "c8dbbee8-ac65-49b1-aca3-9431825c78d2"
 
 
 [\successor{n}]
-Defines: s := \union:of{n}:and{\singleton{n}} is \natural.number
+Defines: s := \set.theoretic.union:of{n}:and{\set.theoretic.singleton{n}} is \natural.number
 when: n is \natural.number
 Documented:
 . called: "successor of $n?$"
