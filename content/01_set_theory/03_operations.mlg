@@ -87,7 +87,7 @@ Documented:
 Id: "c1766d97-e27d-4e5f-8d60-6621c1b0ca68"
 
 
-[\difference:of{A}:and{B}]
+[\set.theoretic.difference:of{A}:and{B}]
 Defines: D is \set
 when: A, B is \set
 expresses:
