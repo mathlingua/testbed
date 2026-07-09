@@ -1,5 +1,5 @@
-introduction.mlg
-set_theory
-people.mlg
-resources.mlg
-appendix.mlg -> HIDDEN
+00_introduction.mlg -> Introduction
+01_set_theory -> Set Theory
+02_people.mlg -> People
+03_resources.mlg -> Resources
+04_appendix.mlg -> HIDDEN
