@@ -4,7 +4,7 @@ Id: "11006328-2a35-4c6b-9946-ba40cfc472d4"
 
 [m \.comparable./ n]
 States:
-when: m, n is \natural.number
+when: m, n is \set.theoretic.natural.number
 that:
 . anyOf:
   . m "in" n
@@ -19,8 +19,8 @@ Id: "9223333f-9416-4f97-9595-f982fd0f4f66"
 
 [m \:less.than:/ n]
 Describes: m
-when: n is \natural.number
-extends: m is \natural.number
+when: n is \set.theoretic.natural.number
+extends: m is \set.theoretic.natural.number
 satisfies: m "in" n
 Documented:
 . called: "$m?$ less than $n?$"
@@ -31,8 +31,8 @@ Id: "67dfb9c9-12ca-496f-8dab-b36699677435"
 
 [m \:less.than.or.equal:/ n]
 Describes: m
-when: n is \natural.number
-extends: m is \natural.number
+when: n is \set.theoretic.natural.number
+extends: m is \set.theoretic.natural.number
 satisfies:
 . anyOf:
   . m \:less.than?:/ n
@@ -45,7 +45,7 @@ Id: "fb02b92c-b803-414e-b46c-a882237acf3d"
 
 
 Lemma:
-given: m, n is \natural.number
+given: m, n is \set.theoretic.natural.number
 then: m \.comparable./ n
 Documented:
 . description: "All natural numbers are comparable: for any $m, n \in \omega$, one of $m \in n$, $n \in m$, or $m = n$ holds. The proof is a double induction using that each natural number is transitive."
@@ -54,7 +54,7 @@ Id: "9ca0f4aa-82e4-46e2-bcd7-a6e2843423a1"
 
 Corollary: "Trichotomy"
 of: "Lemma 3.18"
-given: n, m is \natural.number
+given: n, m is \set.theoretic.natural.number
 then:
 . oneOf:
   . n = m
@@ -67,7 +67,7 @@ Id: "92b0c011-730b-4e42-81f8-dcedb68f93d6"
 
 Corollary: "Corollary 3.20"
 of: "Lemma 3.7 and the trichotomy law"
-given: n, m is \natural.number
+given: n, m is \set.theoretic.natural.number
 where: n != m
 then:
 . have: n \:proper.subset?:/ m
@@ -78,27 +78,27 @@ Id: "68bcb5f8-d1d4-4e0b-ab0b-3b3c3d4e8d4d"
 
 
 Lemma: "Lemma 3.23"
-given: m, n, q is \natural.number
+given: m, n, q is \set.theoretic.natural.number
 then:
 . if: m \:less.than?:/ n
-  then: \successor{m} \:less.than.or.equal:/ n
+  then: \set.theoretic.successor{m} \:less.than.or.equal:/ n
 . m \:less.than.or.equal?:/ \sum:of{m}:and{n}
 . if:
-  . \zero \:less.than?:/ q
-  . \zero \:less.than?:/ n
-  then: \zero \:less.than?:/ \product:of{q}:and{n}
+  . \set.theoretic.zero \:less.than?:/ q
+  . \set.theoretic.zero \:less.than?:/ n
+  then: \set.theoretic.zero \:less.than?:/ \product:of{q}:and{n}
 Documented:
 . description: "Let $m, n, q \in \omega$. Then (a) if $m < n$ then $m^+ \leq n$; (b) $m \leq m + n$; and (c) if $q > 0$ and $n > 0$ then $qn > 0$."
 Id: "c6f806a0-a146-41c3-b0ef-a577c2eba28f"
 
 
 Theorem: "Theorem 3.24"
-given: k, m is \natural.number
+given: k, m is \set.theoretic.natural.number
 then:
 . have:
-  . exists: n is \natural.number
+  . exists: n is \set.theoretic.natural.number
     suchThat:
-    . \zero \:less.than?:/ n
+    . \set.theoretic.zero \:less.than?:/ n
     . \sum:of{k}:and{n} = m
   iff: k \:less.than?:/ m
 Documented:
@@ -111,14 +111,14 @@ Corollary:
 of:
 . "Theorem 3.24"
 given:
-. k, m, n is \natural.number
+. k, m, n is \set.theoretic.natural.number
 where:
 . k \:less.than:/ m
 then:
 . allOf:
   . \sum:of{k}:and{n} \:less.than:/ \sum:of{m}:and{n}
   . if:
-    . \zero \:less.than:/ n
+    . \set.theoretic.zero \:less.than:/ n
     then:
     . \product:of{k}:and{n} \:less.than:/ \product:of{m}:and{n}
 Documented:

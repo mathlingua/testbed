@@ -12,7 +12,7 @@ Id: "8e033c16-6fa1-4b71-9580-77524189c87f"
 
 
 Lemma:
-given: n is \natural.number
+given: n is \set.theoretic.natural.number
 then:
 . forAll: x is \set
   where: x "in" n

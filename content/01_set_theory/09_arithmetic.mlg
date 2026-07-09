@@ -3,7 +3,7 @@ Id: "95ddf020-837d-4841-89ba-9c96fc5e4f9a"
 
 
 [\one]
-Defines: o := \successor{\zero} is \natural.number
+Defines: o := \set.theoretic.successor{\set.theoretic.zero} is \set.theoretic.natural.number
 Documented:
 . called: "one"
 . written: "1"
@@ -12,12 +12,12 @@ Id: "8fd6a20f-f9a3-459a-a27b-1071cded5ed8"
 
 
 [\sum:of{m}:and{n}]
-Defines: s is \natural.number
-when: m, n is \natural.number
+Defines: s is \set.theoretic.natural.number
+when: m, n is \set.theoretic.natural.number
 expresses:
-. \sum:of{m}:and{\zero} = m
-. forAll: k is \natural.number
-  then: \sum:of{m}:and{\successor{k}} = \successor{\sum:of{m}:and{k}}
+. \sum:of{m}:and{\set.theoretic.zero} = m
+. forAll: k is \set.theoretic.natural.number
+  then: \sum:of{m}:and{\set.theoretic.successor{k}} = \set.theoretic.successor{\sum:of{m}:and{k}}
 Documented:
 . called: "sum of $m?$ and $n?$"
 . written: "m? + n?"
@@ -26,12 +26,12 @@ Id: "143db882-1e6d-4357-a241-783c6daa562c"
 
 
 [\product:of{m}:and{n}]
-Defines: p is \natural.number
-when: m, n is \natural.number
+Defines: p is \set.theoretic.natural.number
+when: m, n is \set.theoretic.natural.number
 expresses:
-. \product:of{m}:and{\zero} = \zero
-. forAll: k is \natural.number
-  then: \product:of{m}:and{\successor{k}} = \sum:of{\product:of{m}:and{k}}:and{m}
+. \product:of{m}:and{\set.theoretic.zero} = \set.theoretic.zero
+. forAll: k is \set.theoretic.natural.number
+  then: \product:of{m}:and{\set.theoretic.successor{k}} = \sum:of{\product:of{m}:and{k}}:and{m}
 Documented:
 . called: "product of $m?$ and $n?$"
 . written: "m? \cdot n?"
@@ -40,12 +40,12 @@ Id: "24bdd310-86f4-4c1c-a44d-c850304d6d49"
 
 
 [\power:base{m}:exponent{n}]
-Defines: e is \natural.number
-when: m, n is \natural.number
+Defines: e is \set.theoretic.natural.number
+when: m, n is \set.theoretic.natural.number
 expresses:
-. \power:base{m}:exponent{\zero} = \one
-. forAll: k is \natural.number
-  then: \power:base{m}:exponent{\successor{k}} = \product:of{\power:base{m}:exponent{k}}:and{m}
+. \power:base{m}:exponent{\set.theoretic.zero} = \one
+. forAll: k is \set.theoretic.natural.number
+  then: \power:base{m}:exponent{\set.theoretic.successor{k}} = \product:of{\power:base{m}:exponent{k}}:and{m}
 Documented:
 . called: "$m?$ to the power $n?$"
 . written: "m?^{n?}"
@@ -54,7 +54,7 @@ Id: "671ceb2a-9714-424f-813e-6a971a462a3d"
 
 
 Theorem:
-given: k, m, n is \natural.number
+given: k, m, n is \set.theoretic.natural.number
 then:
 . \sum:of{\sum:of{k}:and{m}}:and{n} = \sum:of{k}:and{\sum:of{m}:and{n}}
 . \sum:of{m}:and{n} = \sum:of{n}:and{m}
@@ -63,7 +63,7 @@ Documented:
 Id: "ff7967ab-f54e-4124-bb1b-e74888d23635"
 
 Theorem:
-given: k, m, n is \natural.number
+given: k, m, n is \set.theoretic.natural.number
 then:
 . \product:of{k}:and{\sum:of{m}:and{n}} = \sum:of{\product:of{k}:and{m}}:and{\product:of{k}:and{n}}
 . \product:of{\sum:of{k}:and{m}}:and{n} = \sum:of{\product:of{k}:and{n}}:and{\product:of{m}:and{n}}
@@ -75,7 +75,7 @@ Id: "77b4c732-08a1-4e48-9ead-d13457f0c09b"
 Corollary: "Associativity and Commutativity of Multiplication"
 of: "Theorem 3.13 (Distributivity)"
 given:
-. k, m, n is \natural.number
+. k, m, n is \set.theoretic.natural.number
 then:
 . \product:of{\product:of{k}:and{m}}:and{n} = \product:of{k}:and{\product:of{m}:and{n}}
 . \product:of{m}:and{n} = \product:of{n}:and{m}
@@ -84,7 +84,7 @@ Documented:
 Id: "c1571597-e7ce-45b2-829e-88011eb561aa"
 
 Theorem: "Theorem 3.16 (Laws of Exponents)"
-given: k, m, n is \natural.number
+given: k, m, n is \set.theoretic.natural.number
 then:
 . \power:base{k}:exponent{\sum:of{m}:and{n}} = \product:of{\power:base{k}:exponent{m}}:and{\power:base{k}:exponent{n}}
 . \product:of{\power:base{k}:exponent{n}}:and{\power:base{m}:exponent{n}} = \power:base{\product:of{k}:and{m}}:exponent{n}

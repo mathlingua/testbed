@@ -77,7 +77,7 @@ Documented:
 Id: "d81afeb4-f95e-4a5a-a17c-dd6f7e6ace2b"
 
 
-[\intersection:of{A}:and{B}]
+[\set.theoretic.intersection:of{A}:and{B}]
 Defines: I := \set.theoretic.intersection:over{\set.theoretic.pair:of{A}:and{B}} is \set
 when: A, B is \set
 Documented:

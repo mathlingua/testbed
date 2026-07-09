@@ -1,7 +1,7 @@
 [\(finite)::set]
 Refines: X
 satisfies:
-. exists: n is \natural.number
+. exists: n is \set.theoretic.natural.number
   suchThat:
   . X \:equivalent:/ n
 Documented:
@@ -24,7 +24,7 @@ Id: "c08206ff-de4f-44c5-bc78-be658fef5be1"
 Lemma:
 . "Lemma 4.5 (Pigeonhole Principle)"
 given:
-. n is \natural.number
+. n is \set.theoretic.natural.number
 . A is \set
 where:
 . A \:proper.subset:/ n
@@ -41,11 +41,11 @@ of:
 . "Lemma 4.5 (Pigeonhole Principle)"
 given:
 . E is \set
-. n is \natural.number
+. n is \set.theoretic.natural.number
 where:
 . E \:equivalent:/ n
 then:
-. forAll: m is \natural.number
+. forAll: m is \set.theoretic.natural.number
   where:
   . E \:equivalent:/ m
   then:
@@ -55,7 +55,7 @@ Documented:
 Id: "abd5b742-bb8b-4787-bfb5-9cc96e45c1cf"
 
 [\cardinality{E}]
-Defines: c is \natural.number
+Defines: c is \set.theoretic.natural.number
 when:
 . E is \set
 Documented:
@@ -69,7 +69,7 @@ Corollary:
 of:
 . "Lemma 4.5 (Pigeonhole Principle)"
 then:
-. \naturals is? \(infinite)::set
+. \set.theoretic.naturals is? \(infinite)::set
 Documented:
 . description: "The set $\omega$ is infinite. Indeed $\omega \sim \omega \setminus \{0\}$ under the map $n \mapsto n^+$, so $\omega$ is equivalent to a proper subset of itself, which no finite set can be."
 Id: "f365ada7-50a7-4c7f-b4ec-3910633d25e6"

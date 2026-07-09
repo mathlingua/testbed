@@ -38,7 +38,7 @@ Documented:
 Id: "6e4b61e7-24a6-4a40-9ac1-d288ce0ebf22"
 
 
-[\cartesian.product:of{A}:and{B}]
+[\set.theoretic.cartesian.product:of{A}:and{B}]
 Defines: P is \set
 when: A, B is \set
 expresses:

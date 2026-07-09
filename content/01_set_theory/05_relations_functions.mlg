@@ -1,7 +1,7 @@
-[\relation:from{A}:to{B}]
+[\set.theoretic.relation:from{A}:to{B}]
 Describes: R
 when: A, B is \set
-extends: R \:subset:/ \cartesian.product:of{A}:and{B}
+extends: R \:subset:/ \set.theoretic.cartesian.product:of{A}:and{B}
 Enables:
 . capability: R(a_, b_) :-> (a_, b_) "in" R
   written: "a_? \: R \: b_?"
@@ -12,10 +12,10 @@ Documented:
 Id: "982d5d26-08c5-41f7-a22b-68c0434450f0"
 
 
-[\relation:on{X}]
+[\set.theoretic.relation:on{X}]
 Describes: R
 when: X is \set
-extends: R is \relation:from{X}:to{X}
+extends: R is \set.theoretic.relation:from{X}:to{X}
 Documented:
 . called: "relation on $X?$"
 . written: "R? \subseteq X? \times X?"
@@ -23,7 +23,7 @@ Documented:
 Id: "16dced34-323c-4b3b-869f-5e473034da35"
 
 
-[\domain{R}]
+[\set.theoretic.domain{R}]
 Defines: D is \set
 when: R is \set
 expresses:
@@ -40,7 +40,7 @@ Documented:
 Id: "046391ea-6a1b-452e-9ef5-07319ebd5362"
 
 
-[\range{R}]
+[\set.theoretic.range{R}]
 Defines: N is \set
 when: R is \set
 expresses:
