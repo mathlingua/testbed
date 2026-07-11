@@ -3,5 +3,10 @@
     "version": 1,
     "sha256": "cfa93c6c01d0107b6892014eb07e895950cdc5581c3dd66a35885b58bb3a82ea",
     "repo_version": 1
+  },
+  {
+    "version": 2,
+    "sha256": "af79314574cd70245763613a6e011178aa2721fe0739cee8da2ffae2b50ba4e0",
+    "repo_version": 2
   }
 ]
