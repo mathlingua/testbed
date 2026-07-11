@@ -17,7 +17,9 @@ Enables:
 . capability: x_ "in" X :-> \\abstract
 Documented:
 . called: "set"
-. description: "The primitive object of the theory. Belonging is the undefined notion: for a set $x$ and a set $A$, either $x \in A$ or $x \notin A$."
+. description: "The primitive object of the theory. Belonging is the
+                undefined notion: for a set $x$ and a set $A$, either
+                $x \in A$ or $x \notin A$."
 Id: "27f9dbd5-5b5e-4be3-b280-1afef8411f2d"
 
 

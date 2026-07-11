@@ -1,0 +1,12 @@
+[
+  {
+    "version": 1,
+    "version_control_sha256": "102864b48b199287e1762c4439f9ca9eb0d37521",
+    "summary": "initial commit"
+  },
+  {
+    "version": 2,
+    "version_control_sha256": "670c1cc0d99634aed978b434d2485386f32926c7",
+    "summary": "update \\set"
+  }
+]
