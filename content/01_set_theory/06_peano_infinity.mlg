@@ -48,10 +48,11 @@ Documented:
 Id: "92407cb2-fc01-41a2-a223-3b2671145f65"
 
 
-Axiom: "Axiom of Infinity"
+Axiom:
 then:
 . exists: A is \(inductive)::set
 Documented:
+. called: "Axiom of Infinity"
 . description: "There exists an inductive set. This is the final axiom of ZF set theory and it guarantees the existence of infinite sets, in particular the set of natural numbers."
 Id: "b1357417-28e9-4f0d-b306-119f8abcafe8"
 
@@ -65,7 +66,7 @@ Documented:
 Id: "36f86c98-6b0a-4589-a378-d3270495aaf0"
 
 
-Theorem: "The Peano Axioms"
+Theorem:
 then:
 . \set.theoretic.zero is \set.theoretic.natural.number
 . forAll: n is \set.theoretic.natural.number
@@ -82,6 +83,7 @@ then:
   . A \:subset?:/ \set.theoretic.naturals
   then: A = \set.theoretic.naturals
 Documented:
+. called: "The Peano Axioms"
 . description: "The natural numbers are the set $\omega$ with successor function $S \colon \omega \to \omega$ satisfying: (I) there is an element $0 \in \omega$; (II) if $n \in \omega$ then $S(n) \in \omega$; (III) $S(n) \neq 0$; (IV) $S$ is injective; and (V) the principle of mathematical induction: any inductive subset of $\omega$ equals $\omega$."
 Id: "8c205c79-9fc7-47f6-a695-05a9001cd565"
 

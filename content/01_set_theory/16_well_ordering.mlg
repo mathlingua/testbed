@@ -22,7 +22,6 @@ Documented:
 Id: "5ead27ca-0a76-4340-827c-ac72e5154f35"
 
 Theorem:
-. "Theorem 4.31"
 given:
 . X is \set
 where:
@@ -30,19 +29,19 @@ where:
 then:
 . \totally.ordered{X}
 Documented:
+. called: "Theorem 4.31"
 . description: "Every well ordered set is totally ordered: given $x, y \in X$, the subset $\{x, y\}$ has a least element, so $x$ and $y$ are comparable."
 Id: "39f63de3-8e4a-4f4b-9aa6-5ec84972f708"
 
 Theorem:
-. "Theorem 4.32"
 then:
 . \well.ordered{\set.theoretic.naturals}
 Documented:
+. called: "Theorem 4.32"
 . description: "The natural numbers are well ordered. If a nonempty $A \subseteq \omega$ had no least element, induction would show that no natural number lies in $A$, so $A = \emptyset$, a contradiction."
 Id: "91178a56-7d69-4e73-b56a-1cf593c93c92"
 
 Theorem:
-. "Theorem 4.33 (Transfinite Induction)"
 given:
 . X is \set
 . S is \set
@@ -60,6 +59,7 @@ where:
 then:
 . S = X
 Documented:
+. called: "Theorem 4.33 (Transfinite Induction)"
 . description: "Suppose $X$ is well ordered and $S \subseteq X$ is such that for all $x \in X$, if $s(x) \subseteq S$ then $x \in S$. Then $S = X$. This is the analogue for well ordered sets of the principle of mathematical induction."
 Id: "fd837670-a02e-4c69-b64c-5dd470fa1696"
 
@@ -90,7 +90,6 @@ Documented:
 Id: "5f1f1c55-e4ac-42ca-b69a-ea33008529c7"
 
 Lemma:
-. "Lemma 4.35"
 given:
 . C is \set
 where:
@@ -107,21 +106,21 @@ then:
   suchThat:
   . \well.ordered{U}
 Documented:
+. called: "Lemma 4.35"
 . description: "Let $C$ be a chain with respect to continuation and $U = \bigcup_{D \in C} D$. Then there is a unique well ordering of $U$ making $U$ a continuation of each element of $C$ distinct from $U$. This lets one build a well ordered set from a chain of initial segments."
 Id: "04a1fede-4f52-4915-ad37-848cce1f674c"
 
 Theorem:
-. "Theorem 4.36 (Well Ordering Principle)"
 given:
 . X is \set
 then:
 . \well.ordered{X}
 Documented:
+. called: "Theorem 4.36 (Well Ordering Principle)"
 . description: "Assuming the axioms of ZF and Zorn's lemma, every set can be well ordered. One applies Zorn's lemma to the collection of well orderings of subsets of $X$, ordered by continuation; a maximal element must well order all of $X$."
 Id: "8671e667-d056-44e4-a56a-e0fc963f753f"
 
 Theorem:
-. "Theorem 4.37"
 given:
 . X is \set
 where:
@@ -134,6 +133,7 @@ where:
 then:
 . exists: f is \choice.function:on{X}
 Documented:
+. called: "Theorem 4.37"
 . description: "Assuming the axioms of ZF and the well ordering principle, the axiom of choice holds. Well order $\bigcup_{A \in X} A$; then the function sending each $A \in X$ to its least element is a choice function. This completes the equivalence of the axiom of choice, Zorn's lemma, and the well ordering principle."
 Id: "252a3455-3de4-4d4a-b258-b918cbd0c09d"
 

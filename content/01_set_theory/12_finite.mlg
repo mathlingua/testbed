@@ -22,7 +22,6 @@ Documented:
 Id: "c08206ff-de4f-44c5-bc78-be658fef5be1"
 
 Lemma:
-. "Lemma 4.5 (Pigeonhole Principle)"
 given:
 . n is \set.theoretic.natural.number
 . A is \set
@@ -32,11 +31,11 @@ then:
 . not:
   . n \:equivalent:/ A
 Documented:
+. called: "Lemma 4.5 (Pigeonhole Principle)"
 . description: "If $n \in \omega$, then $n$ is not equivalent to any of its proper subsets. Equivalently, every injective function from $n$ to $n$ is surjective. This is proved by induction on $n$."
 Id: "a77ed390-76bd-4651-8b94-79dcf993f202"
 
 Corollary:
-. "Corollary 4.6"
 of:
 . "Lemma 4.5 (Pigeonhole Principle)"
 given:
@@ -51,6 +50,7 @@ then:
   then:
   . m = n
 Documented:
+. called: "Corollary 4.6"
 . description: "If $E$ is a set and $n \in \omega$ with $E \sim n$, then $n$ is the unique natural number equivalent to $E$. The pigeonhole principle guarantees that distinct natural numbers are never equivalent."
 Id: "abd5b742-bb8b-4787-bfb5-9cc96e45c1cf"
 
@@ -65,11 +65,11 @@ Documented:
 Id: "f300239f-83a2-4cb6-821e-044a8050b5d4"
 
 Corollary:
-. "Corollary 4.8"
 of:
 . "Lemma 4.5 (Pigeonhole Principle)"
 then:
 . \set.theoretic.naturals is? \(infinite)::set
 Documented:
+. called: "Corollary 4.8"
 . description: "The set $\omega$ is infinite. Indeed $\omega \sim \omega \setminus \{0\}$ under the map $n \mapsto n^+$, so $\omega$ is equivalent to a proper subset of itself, which no finite set can be."
 Id: "f365ada7-50a7-4c7f-b4ec-3910633d25e6"

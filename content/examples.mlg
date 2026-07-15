@@ -168,11 +168,12 @@ Id: "3fbde878-1ac2-4fda-a6bf-e45abed13e1d"
 
 Text: "Theorem-like items — `Axiom:`, `Theorem:`, `Corollary:`, `Lemma:`, and
 `Conjecture:` — share the `given:` / `where:` / `then:` / `iff:` shape and take an
-optional command heading and optional quoted name.
+optional command heading. Their head section takes no argument; the result's name
+lives in `Documented:` `called:`, exactly as for definitions.
 
 ```mlg
 [\axiom.of.extension]
-Axiom: \"Axiom of Extension\"
+Axiom:
 given: A, B is \set
 then: A = B
 iff:
@@ -181,6 +182,7 @@ iff:
   . have: x \"in\" A
     iff: x \"in\" B
 Documented:
+. called: \"Axiom of Extension\"
 . description: \"Two sets are equal exactly when they have the same elements.\"
 ```
 "
@@ -191,20 +193,26 @@ Text: "A `Theorem:` may be heading-less. `Lemma:` has the same shape, and
 `Corollary:` adds an `of:` field naming what it follows from.
 
 ```mlg
-Theorem: \"Commutativity of Integer Multiplication\"
+Theorem:
 given: a, b is \integer
 then: a * b = b * a
+Documented:
+. called: \"Commutativity of Integer Multiplication\"
 
-Lemma: \"Every Prime Exceeds One\"
+Lemma:
 given: p is \(prime)::integer
 then: p > 1
+Documented:
+. called: \"Every Prime Exceeds One\"
 
-Corollary: \"Infinitude of Primes\"
+Corollary:
 of: \"Euclid's Theorem\"
 given: n is \integer
 then:
 . exists: p is \(prime)::integer
   suchThat: p > n
+Documented:
+. called: \"Infinitude of Primes\"
 ```
 "
 Id: "7a9a7278-cea7-43da-ac8a-61660e6e3920"
@@ -214,7 +222,7 @@ Text: "A `Conjecture:` records an open problem.
 
 ```mlg
 [\goldbach.conjecture]
-Conjecture: \"Goldbach's Conjecture\"
+Conjecture:
 then:
 . forAll: n is \integer
   where:
@@ -223,6 +231,8 @@ then:
   then:
   . exists: p, q is \(prime)::integer
     suchThat: n = p + q
+Documented:
+. called: \"Goldbach's Conjecture\"
 ```
 "
 Id: "588b3633-7c85-4a0a-b061-b34dd55fc55b"
@@ -313,12 +323,14 @@ Documented:
 Id: "ba49c7ce-cc77-45a4-ae48-d74ce80082df"
 
 
-Text: "An `Enables:` `relation:` records a relationship to another type and may opt
-into cast behavior with `as: \\viewable_as` (an ordinary cast) or `as: \\encoded_by`
-(a cast used only by `as!`), optionally justified `by:`. A `from:` group describes
-notation (`capability:`) or a viewing (`as:`) supplied by a cast source, and a
-`connection:` group holds prose relationships (`to:`, `means:`, `signifies:`,
-`viewable:`, `through:`).
+Text: "An `Enables:` `relation:` records a relationship to another type, and its
+`represents:` field opts into type-system cast behavior. `\\coercion` means a value
+of this type may be used wherever the related type is expected and `x as ...` casts
+to it — an integer *is* a rational. `\\encoding` instead marks an abstraction
+boundary: there is no automatic coercion, and only an explicit `x as! ...` cast
+drops through the encoding — an integer is *encoded as* a set, but is not itself a
+set. A `from:` group describes notation (`capability:`) or a viewing (`as:`)
+supplied by a cast source.
 
 ```mlg
 [\integer]
@@ -328,24 +340,16 @@ Enables:
   to: r := \as.rational{n} is \rational
   when: n is \integer
   means: n \.embeds.into./ r
-  as: \\\\viewable_as
+  represents: \\\\coercion
   by: \"\theorem.integers.are.rationals\"
 . relation:
   to: s := \as.set{n} is \set
   means: n \.encoded.as./ s
-  as: \\\\encoded_by
+  represents: \\\\encoding
 . from: S ::= {x__ : ...}
   capability: x_ \"in\" n :-> x_ member_of S
 . from: P ::= {(p_, q_) : ...}
   as: f(p_) := q_
-. connection:
-  to: \"the rational numbers\"
-  using:
-  . k is \integer
-  means: \"every integer is a rational number\"
-  signifies: \"a point on the number line\"
-  viewable: \"as a fraction with denominator one\"
-  through: \"the canonical embedding\"
 Documented:
 . called: \"integer\"
 ```

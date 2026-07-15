@@ -15,7 +15,6 @@ Documented:
 Id: "b557b79f-5179-4fff-a20f-a93d742231a4"
 
 Theorem:
-. "Proposition 4.10"
 given:
 . X is \set
 where:
@@ -24,11 +23,11 @@ then:
 . not:
   . exists: f is \choice.function:on{X}
 Documented:
+. called: "Proposition 4.10"
 . description: "If $X$ is a collection of sets with $\emptyset \in X$, then there is no choice function on $X$, since a choice function would have to select an element of the empty set."
 Id: "a46ca3e5-e2bd-448d-bf45-8a89973ce143"
 
 Theorem:
-. "Theorem 4.11"
 given:
 . X is \set
 where:
@@ -44,6 +43,7 @@ then:
   iff:
   . exists: f is \choice.function:on{X}
 Documented:
+. called: "Theorem 4.11"
 . description: "A finite collection $X$ of sets has a choice function if and only if no set in $X$ is empty. The forward direction is Proposition 4.10; the reverse is proved by induction on the cardinality of $X$."
 Id: "532996b0-e015-492f-9ea7-c312ebf89aa0"
 
@@ -60,7 +60,6 @@ function in general, one must take its existence as an axiom.
 Id: "eb0082a7-0204-4860-ab6f-a745b4ad779f"
 
 Axiom:
-. "Axiom of Choice"
 given:
 . X is \set
 where:
@@ -73,5 +72,6 @@ where:
 then:
 . exists: f is \choice.function:on{X}
 Documented:
+. called: "Axiom of Choice"
 . description: "Let $X$ be a collection of non-empty sets. Then there exists a choice function on $X$. For finite collections this is a theorem, but in the infinite case there is in general no rule specifying which element to choose, and so the existence of a choice function must be taken as an axiom. Adjoining it to the axioms of ZF yields the system ZFC."
 Id: "fe49a375-61dd-4bb2-895f-4afdf7c10baf"
