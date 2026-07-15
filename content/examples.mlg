@@ -1,19 +1,19 @@
 Title: "MathLingua by Example"
-Id: "646bd845-9b43-4fb7-affc-3f78ecec9d70"
+Id: "49758ac5-c040-43c5-a148-06be3ff4daa9"
 
 
-Text: "This page demonstrates every feature of the MathLingua language using real
+Text: "This page demonstrates every construct of the MathLingua language using real
 mathematics. Each construct appears in a fenced code block.
 
 - A ```mlg``` block is a complete item whose **syntax** is checked by `mlg check`.
 - A ```mlg-fragment``` block shows an isolated piece of syntax — structural,
   formulation, or header code — and is highlighted but never checked.
 "
-Id: "8c705f6e-0254-434b-8903-c7acfd2e01d9"
+Id: "3b8f7b53-8a16-48ef-b019-084e5d136500"
 
 
 SectionTitle: "Page Content"
-Id: "2e7f0585-5bf1-48bb-ad0a-6893280a043b"
+Id: "d72f3f58-b63b-4c91-88d2-b99fb8c9e5fe"
 
 
 Text: "A document is built from page-content items. `Title:`, `SectionTitle:`, and
@@ -27,11 +27,11 @@ SubsectionTitle: \"Prime Numbers\"
 Text: \"The primes are the multiplicative atoms of $\mathbb{Z}$.\"
 ```
 "
-Id: "20e0cd36-c67b-4670-9574-a9f32822a248"
+Id: "03f027c1-aa80-4f67-a27a-8dca5e203f9b"
 
 
 SectionTitle: "Definitions"
-Id: "a6343456-94b8-41e1-a5ba-ec623a49fe7e"
+Id: "e4098aed-a1f9-40b4-9ef5-52ca9bc3191d"
 
 
 Text: "`Describes:` introduces a command for a mathematical form. Its `[...]`
@@ -53,7 +53,7 @@ Documented:
                 some integer $k$.\"
 ```
 "
-Id: "f4ad5a01-e8c2-4ce2-8b80-7b82f8edf48d"
+Id: "9e4122b6-a524-45a1-b949-14a30b723581"
 
 
 Text: "A `Describes:` whose subject is callable uses the `f(x__) ::= y_` form and
@@ -71,7 +71,35 @@ Documented:
 . written: \"f? \colon A? \to B?\"
 ```
 "
-Id: "d3926112-6306-4315-9cb9-3015d1d15683"
+Id: "1205f8ea-1b13-4c49-9e75-d8602279a1f3"
+
+
+Text: "A `Describes:` may bring auxiliary symbols into scope with `using:`, view a
+symbol as another type with `via` in `extends:` or `specifies:`, and attach a
+`[label]` to any nested clause. The ordered pair is described as a set.
+
+```mlg
+[\ordered.pair:of{a}:and{b}]
+Describes: p
+using: a, b is \set
+extends: p is \set
+specifies:
+. p is \set via (a, b)
+satisfies:
+. [pair.equality]
+  forAll: c, d is \set
+  then:
+  . have: \ordered.pair:of{a}:and{b} = \ordered.pair:of{c}:and{d}
+    iff:
+    . allOf:
+      . a = c
+      . b = d
+Documented:
+. called: \"ordered pair of $a?$ and $b?$\"
+. written: \"(a?, b?)\"
+```
+"
+Id: "3d255f6e-68cd-4920-95d1-03c297eacba0"
 
 
 Text: "`Defines:` defines a value, specification, or type fact. The empty set is
@@ -89,7 +117,7 @@ Documented:
 . written: \"\emptyset\"
 ```
 "
-Id: "79aad4b6-d6ec-435f-9805-65dbda122a43"
+Id: "14d08986-7ce0-4566-b2cc-0658dff8650c"
 
 
 Text: "`Refines:` defines an adjective that further qualifies an existing command,
@@ -114,7 +142,7 @@ Documented:
                 and itself.\"
 ```
 "
-Id: "bb9055dd-9f21-4b3b-84df-e4a3e8a82088"
+Id: "21f3b535-e9b8-4fa2-8450-3e601d443760"
 
 
 Text: "`States:` names a statement with a `that:` body. Its heading is often an
@@ -131,11 +159,11 @@ Documented:
 . written: \"\gcd(m?, n?) = 1\"
 ```
 "
-Id: "938f3c11-570a-4de2-9557-559d06ccc577"
+Id: "72180437-c09e-446c-94bb-6d4dcc6d2243"
 
 
 SectionTitle: "Axioms, Theorems, and Proofs"
-Id: "6130b2c0-8ad3-4616-be5a-eb8fe34cb644"
+Id: "3fbde878-1ac2-4fda-a6bf-e45abed13e1d"
 
 
 Text: "Theorem-like items — `Axiom:`, `Theorem:`, `Corollary:`, `Lemma:`, and
@@ -156,11 +184,11 @@ Documented:
 . description: \"Two sets are equal exactly when they have the same elements.\"
 ```
 "
-Id: "0ea6d906-ce0a-4cd5-9d70-7fc3c8c352fc"
+Id: "65a82e1e-dd38-4788-b7a4-a7d5b82d54c3"
 
 
-Text: "A `Theorem:` may be heading-less. `Corollary:` adds an `of:` field naming
-what it follows from.
+Text: "A `Theorem:` may be heading-less. `Lemma:` has the same shape, and
+`Corollary:` adds an `of:` field naming what it follows from.
 
 ```mlg
 Theorem: \"Commutativity of Integer Multiplication\"
@@ -179,7 +207,7 @@ then:
   suchThat: p > n
 ```
 "
-Id: "603e9d02-6414-4fd8-ad9e-78f498238d21"
+Id: "7a9a7278-cea7-43da-ac8a-61660e6e3920"
 
 
 Text: "A `Conjecture:` records an open problem.
@@ -197,17 +225,17 @@ then:
     suchThat: n = p + q
 ```
 "
-Id: "2ee3a891-8d2a-4756-90ab-b44223e48294"
+Id: "588b3633-7c85-4a0a-b061-b34dd55fc55b"
 
 
 SectionTitle: "Clauses"
-Id: "0fd48ad1-0afd-4dec-9166-7dbac6dbdd04"
+Id: "b6c6a61a-437b-45e2-bd9f-a5d5541f5709"
 
 
 Text: "Clauses are the logical building blocks used inside `then:`, `satisfies:`,
-`expresses:`, `that:`, and quantifier bodies. The available clause groups are
-`forAll:`, `exists:`, `existsUnique:`, `if:` / `then:`, `have:` / `iff:`, `not:`,
-`anyOf:`, `oneOf:`, `allOf:`, `equivalently:`, and `piecewise:`.
+`expresses:`, `that:`, and quantifier bodies. The quantifier and connective clauses
+are `forAll:`, `exists:`, `existsUnique:`, `if:` / `then:`, `have:` / `iff:`, and
+`not:`, with the sub-sections `where:`, `suchThat:`, `then:`, and `iff:`.
 
 ```mlg-fragment
 forAll: x is \real
@@ -221,48 +249,52 @@ then:
   . z * z = x
 . if: x > 1
   then: x * x > x
-. not: x = 0
-. anyOf:
-  . x < 1
-  . x = 1
-  . x > 1
-. oneOf:
-  . x is \(rational)::real
-  . x is \(irrational)::real
+. have: x != 0
+  iff:
+  . not: x = 0
 ```
 "
-Id: "501f24c5-59ac-42b2-b7c2-cf830834e2dd"
+Id: "edf5f482-2a9d-4316-af2c-0e1e04151103"
 
 
-Text: "`allOf:` requires every branch, `equivalently:` offers interchangeable
-phrasings of the same statement, and `piecewise:` defines a value by cases.
+Text: "The choice clauses are `anyOf:` (at least one), `oneOf:` (exactly one), and
+`allOf:` (every one); `equivalently:` lists interchangeable phrasings; `given:`
+introduces local symbols within a clause; and `piecewise:` defines a value by cases
+with `if:` / `then:` and `else:`.
 
 ```mlg-fragment
+anyOf:
+. x < 1
+. x = 1
+. x > 1
+oneOf:
+. x is \(rational)::real
+. x is \(irrational)::real
 allOf:
 . a \:less.than.or.equal:/ b
 . b \:less.than.or.equal:/ a
 equivalently:
 . a = b
-```
-
-```mlg-fragment
+given: n is \integer
+then: n + 0 = n
 piecewise:
 . if: x \:less.than:/ \zero
   then: \absolute.value{x} := \negation{x}
 . else: \absolute.value{x} := x
 ```
 "
-Id: "f17e0624-2b67-4ecb-9c49-7fe6472d0d22"
+Id: "20dff7eb-622b-4429-a54d-a54821999a84"
 
 
 SectionTitle: "Requires and Enables"
-Id: "0588d87a-5a3d-41b9-ba0f-67d4c4239fe1"
+Id: "9f36b792-79ea-4aec-9da2-0f4881fd0aff"
 
 
-Text: "`Requires:` states notation a construct has by definition; `Enables:`
-states further operations it supports. Both accept `capability:` groups, which use
-a spec-operator alias (`:->`). The built-in target `\\abstract` marks an opaque
-membership notion.
+Text: "`Requires:` states notation a construct has by definition; `Enables:` states
+further operations it supports. Both accept `capability:` groups, which use a
+spec-operator alias (`:->`) or an expression alias (`:=>`). The built-in target
+`\\abstract` marks an opaque membership notion. `Requires:` may also assert a
+`definition:` that a referenced command must establish.
 
 ```mlg
 [\relation:on{X}]
@@ -270,6 +302,7 @@ Describes: R
 when: X is \set
 Requires:
 . capability: p_ \"in\" R :-> \\\\abstract
+. definition: \gcd:of{a}:and{b} is \integer
 Enables:
 . capability: R(a_, b_) :-> (a_, b_) \"in\" R
   written: \"a_? \: R \: b_?\"
@@ -277,13 +310,15 @@ Documented:
 . called: \"relation on $X?$\"
 ```
 "
-Id: "9e8a8d72-9f60-4171-ae04-0bc36c99e766"
+Id: "ba49c7ce-cc77-45a4-ae48-d74ce80082df"
 
 
 Text: "An `Enables:` `relation:` records a relationship to another type and may opt
 into cast behavior with `as: \\viewable_as` (an ordinary cast) or `as: \\encoded_by`
-(a cast used only by `as!`). An `Enables:` `from:` group describes notation supplied
-by a cast source, and a `connection:` group holds prose relationships.
+(a cast used only by `as!`), optionally justified `by:`. A `from:` group describes
+notation (`capability:`) or a viewing (`as:`) supplied by a cast source, and a
+`connection:` group holds prose relationships (`to:`, `means:`, `signifies:`,
+`viewable:`, `through:`).
 
 ```mlg
 [\integer]
@@ -294,57 +329,114 @@ Enables:
   when: n is \integer
   means: n \.embeds.into./ r
   as: \\\\viewable_as
+  by: \"\theorem.integers.are.rationals\"
+. relation:
+  to: s := \as.set{n} is \set
+  means: n \.encoded.as./ s
+  as: \\\\encoded_by
 . from: S ::= {x__ : ...}
   capability: x_ \"in\" n :-> x_ member_of S
+. from: P ::= {(p_, q_) : ...}
+  as: f(p_) := q_
 . connection:
   to: \"the rational numbers\"
+  using:
+  . k is \integer
   means: \"every integer is a rational number\"
+  signifies: \"a point on the number line\"
+  viewable: \"as a fraction with denominator one\"
+  through: \"the canonical embedding\"
 Documented:
 . called: \"integer\"
 ```
 "
-Id: "1f648156-1326-4a16-bd69-7489d74d0f95"
+Id: "2e49a513-ecdc-4e98-a37a-4559220badef"
 
 
 SectionTitle: "Documentation and Metadata"
-Id: "68e1967c-f81f-417a-adb4-ce532339b5fb"
+Id: "a8c42f96-9561-43dc-a9f1-a1b1bfbda74b"
 
 
-Text: "`Documented:` carries rendering and prose metadata: `called:`, `written:`,
-`adjective:`, `overview:`, `description:`, `related:`, `discoverer:`, and `writing:`.
-`Justified:` records justifications, `References:` cites resources, and `Metadata:`
-stores identifiers.
+Text: "`Documented:` carries rendering and prose metadata: `called:` (with optional
+`written:`), `written:`, `adjective:`, `overview:`, `description:`, `related:`,
+`discoverer:`, and `writing:` (a `:~>` writing alias with `as:` text).
 
 ```mlg
 [\euler.totient{n}]
 Defines: t is \integer
 when: n is \integer
-Justified:
-. [totient.multiplicative]
-  by:
-  . \"multiplicativity of the totient over coprime factors\"
-  comment: \"standard\"
 Documented:
 . called: \"Euler totient of $n?$\"
-. written: \"\varphi(n?)\"
+  written: \"\varphi(n?)\"
 . overview: \"Counts integers in $1, \dots, n$ that are coprime to $n$.\"
 . discoverer: \"Leonhard Euler\"
+. related:
+  . \"multiplicative functions\"
+. writing: totient(n_) :~> \varphi(n_)
+  as:
+  . \"\\varphi(n)\"
 . description: \"The number of integers $k$ with $1 \le k \le n$ and
                 $\gcd(k, n) = 1$.\"
-References:
-. $hardy.wright.number.theory
 ```
 "
-Id: "1dd543c9-96cb-47a7-a2ea-731c53a667c9"
+Id: "79d5a7c0-65a9-45f2-b2ef-e42df93f7883"
+
+
+Text: "`Justified:` records `label:` / `by:` justifications with optional
+`comment:`; `Aliases:` defines local `alias:` shorthands (with optional `written:`);
+`References:` cites resource headers; and `Metadata:` stores `id:` and `version:`.
+
+```mlg
+[\riemann.zeta{s}]
+Defines: z is \complex
+when: s is \complex
+Justified:
+. [zeta.euler.product]
+  label:
+  . \"Euler product\"
+  by:
+  . \"unique factorization of the integers\"
+  comment: \"valid for the real part of $s?$ greater than $1$\"
+Documented:
+. called: \"Riemann zeta function\"
+. written: \"\zeta(s?)\"
+Aliases:
+. alias: zeta(s_) :=> \riemann.zeta{s}
+  written:
+  . \"\zeta(s)\"
+References:
+. $hardy.wright.number.theory
+Metadata:
+. id:
+  . \"zeta-function\"
+. version:
+  . \"1\"
+```
+"
+Id: "118f1d5b-69b3-4495-a2ea-ebb1e4ce14ac"
+
+
+Text: "A top-level `Writing:` item is a collection-wide table that renders a plain
+name as a LaTeX fragment. Each entry maps a name to its rendering with `:~>`.
+
+```mlg
+Writing:
+. reals :~> \mathbb{R}
+. naturals :~> \mathbb{N}
+. omega :~> \omega
+```
+"
+Id: "3f1992b0-b1bf-4bc2-8550-442c80fc1acf"
 
 
 SectionTitle: "Relationships Between Concepts"
-Id: "b1d1186f-3a16-4adb-9c31-c385730e84af"
+Id: "47313a72-0126-4014-95f5-4e323f135db2"
 
 
 Text: "A top-level `Relation:` states a bidirectional relationship. Each of
 `between:` and `and:` is either an unquoted declaration or a quoted reference to a
-`#topic` or a `\"\signature\"`; `means:` is a statement or quoted prose.
+`#topic` or a `\"\signature\"`; `means:` is a statement or quoted prose, and it may
+carry `using:`, `when:`, and the usual trailing sections.
 
 ```mlg
 Relation:
@@ -353,12 +445,17 @@ and: a is \real
 means: \"every rational number is a real number\"
 
 Relation:
+. \"the sine and cosine functions are cofunctions\"
+using:
+. x is \real
 between: \"\sin\"
 and: \"\cos\"
-means: \"the sine and cosine functions are cofunctions\"
+when:
+. x = x
+means: \"$\sin(x) = \cos(\tfrac{\pi}{2} - x)$\"
 ```
 "
-Id: "828661b6-0755-4442-b6cf-969e2aa5d523"
+Id: "4c0b68f6-264d-48c7-966d-ccb1dbcf99b2"
 
 
 Text: "A top-level `Equivalent:` declares that several commands are interchangeable
@@ -374,7 +471,7 @@ Documented:
 . called: \"greatest common divisor\"
 ```
 "
-Id: "d19e67f4-1ebb-48da-a02d-ed47c77b51d8"
+Id: "9d5f9a16-b2c7-4282-9bbd-f1367a6962db"
 
 
 Text: "A top-level `Topic:` names a documentation topic with a `#`-sigil heading.
@@ -396,11 +493,11 @@ Documented:
 . called: \"Analytic Number Theory\"
 ```
 "
-Id: "b85da8ff-3b4e-475f-a178-556a03d0d79c"
+Id: "3fb4393e-1496-42fd-90cd-a7aa85c9b08e"
 
 
 Text: "`Disambiguates:` chooses a rendering by cases, matching the first `when:`
-whose conditions hold.
+whose conditions hold; its heading uses a plain operator form.
 
 ```mlg
 [x_ + y_]
@@ -418,10 +515,11 @@ Documented:
 . written: \"x_? + y_?\"
 ```
 "
-Id: "959f3d73-d8b9-46be-933a-3cb355a63073"
+Id: "19144731-f502-46a1-97c7-b17f10c7a950"
 
 
-Text: "`Specify:` provides numeric-domain metadata for the built-in number kinds.
+Text: "`Specify:` provides numeric-domain metadata for the built-in number kinds,
+covering `positive:` / `negative:` / `zero:` with `int:` or `decimal:`.
 
 ```mlg
 Specify:
@@ -432,17 +530,53 @@ Specify:
   . \"integer\"
   is:
   . \"greater than zero\"
+
+Specify:
+. [numbers.negative.integer]
+  negative:
+  . \"negative\"
+  int:
+  . \"integer\"
+  is:
+  . \"less than zero\"
+
+Specify:
+. [numbers.positive.decimal]
+  positive:
+  . \"positive\"
+  decimal:
+  . \"decimal\"
+  is:
+  . \"greater than zero\"
+
+Specify:
+. [numbers.negative.decimal]
+  negative:
+  . \"negative\"
+  decimal:
+  . \"decimal\"
+  is:
+  . \"less than zero\"
+
+Specify:
+. [numbers.zero]
+  zero:
+  . \"zero\"
+  is:
+  . \"the additive identity\"
 ```
 "
-Id: "fc5f1989-dca5-4336-b719-264d5323f441"
+Id: "143d6ac5-0e9f-4bdd-8f67-8e14def57575"
 
 
 SectionTitle: "People and Resources"
-Id: "4e3f7fa0-ad43-4ae7-a70e-434acd50fbd9"
+Id: "225c941b-c1c2-47dc-9235-64ddec2ad64f"
 
 
 Text: "`Person:` records an author with an `[@handle]` heading, and `Resource:`
-records a bibliographic entry with a `[$key]` heading.
+records a bibliographic entry with a `[$key]` heading and fields such as `title:`,
+`author:`, `editor:`, `journal:`, `volume:`, `publisher:`, `year:`, `url:`, and
+`description:`.
 
 ```mlg
 [@leonhard.euler]
@@ -450,78 +584,233 @@ Person: \"Leonhard Euler\"
 biography: \"Swiss mathematician whose work founded much of modern number theory
              and analysis.\"
 
+[$riemann.1859]
+Resource:
+. title: \"On the Number of Primes Less Than a Given Magnitude\"
+. author: \"Bernhard Riemann\"
+. journal: \"Monatsberichte der Berliner Akademie\"
+. year: \"1859\"
+. url: \"https://www.claymath.org/collections/\"
+. description: \"Introduces the zeta function as a tool for studying the primes.\"
+
 [$hardy.wright.number.theory]
 Resource:
+. type: \"book\"
 . title: \"An Introduction to the Theory of Numbers\"
 . author: \"G. H. Hardy and E. M. Wright\"
+. editor: \"D. R. Heath-Brown and J. H. Silverman\"
+. edition: \"6th\"
 . publisher: \"Oxford University Press\"
-. year: \"1938\"
+. institution: \"University of Oxford\"
+. volume: \"1\"
+. month: \"July\"
+. year: \"2008\"
+. homepage: \"https://global.oup.com/\"
+. offset: \"621\"
+. description: \"The standard reference on classical analytic number theory.\"
 ```
 "
-Id: "af9f0a5e-093f-4e25-90cc-b15a7a2be61a"
+Id: "f2c81074-6225-4b3a-8d2b-3bc6e70527e2"
 
 
-SectionTitle: "Formulation Fragments"
-Id: "37a46225-a9a9-467e-843a-a547acae96f9"
+SectionTitle: "Formulation Fragments — Expressions"
+Id: "7c07efe6-22ec-43b2-a152-b27391fdc979"
 
 
-Text: "Formulations are the mathematical expressions inside items. Commands begin
-with `\\` and may carry curly, colon, and parenthesized argument groups; a command
-context suffix such as `#given{...}` supplies arguments to a referenced item.
+Text: "Expressions are the mathematical values inside items. The atoms are names,
+numbers, and backtick-quoted operator names; binary and chained operators combine
+them.
 
 ```mlg-fragment
-\set.theoretic.union:of{A}:and{B}
-\function:from{A}:to{B}
+Value
+123
+`*+`
+x + y * z
+x = y = z
+x ^ y ^ z
+x > 0
+```
+"
+Id: "0500a518-99bb-46cc-a4e3-dbda22b9b29f"
+
+
+Text: "Grouping uses `(.` and `.)` (with an optional `[:label:]`), and negation and
+parentheses control precedence.
+
+```mlg-fragment
+-(.x + y.)
+(x + 1)[:normalized:]
+(.
+  x + y
+.)[:reduced:]
+```
+"
+Id: "cffa685d-6666-49c7-ab19-945f9c7f5dd3"
+
+
+Text: "Named operators are written between pipes and may lean before, after, or
+around their arguments.
+
+```mlg-fragment
+x |plus| y
+x :|before| y
+x |after|: y
+x :|around|: y
+```
+"
+Id: "23d4ddbc-6a1f-4846-85cc-e164ad2f9117"
+
+
+Text: "Function calls, tuples, bracketed indexing, and index substitution round out
+the compound expressions.
+
+```mlg-fragment
+f(x, y + z)
+(a, b, c)
+Domain[element]
+Pair[left, right]
+nested[outer[inner]]
+f[|value := x, Pair[left, right] := y|]
+```
+"
+Id: "7a674128-4468-4763-8e9c-a83f466ad23d"
+
+
+Text: "Set-builder expressions list a form, a membership condition, and an optional
+constraint after `|`.
+
+```mlg-fragment
+{n : n is \integer | n > 0}
+{f_(a_, b_) : x_ \"in\" X | y is \type{A}}
+```
+"
+Id: "d3afd17a-2932-44a1-986c-3b58b71df635"
+
+
+Text: "Spec statements assert facts about a value: membership with `\"in\"`, a custom
+spec operator such as `\"maps_to\"`, a type with `is`, a predicate with `is?` or
+`is_not?`, and an operator declaration with `\"op\"`. A value may be cast to a type
+with `as` (or `as!` for a hard cast), and a member of a structure is reached with a
+dotted name.
+
+```mlg-fragment
+x \"in\" X
+f \"maps_to\" \reals
+x is \real
+x is? \prime
+x is_not? \composite
++ \"on\" \naturals
++ is \operator
+n as \rational
+n as! \set
+G.identity
+G.operation(x, y)
+```
+"
+Id: "30fb14a6-8eb8-4409-8d89-8513a04beaac"
+
+
+SectionTitle: "Formulation Fragments — Commands"
+Id: "020c8574-d3e3-48a1-a172-a9dc1b29948d"
+
+
+Text: "Commands begin with `\\` and name a top-level item. They may carry curly
+argument groups, colon-separated named argument groups (optionally marked optional
+with `:?`), and parenthesized call arguments.
+
+```mlg-fragment
+\set
+\closed.set
+\zeta{n}
+\function:on{A}:to{B}
+\function:on{A}:to{B}(x)
+\function:on{A}:?to{B}
+\generalized.zeta{n}(x)
+```
+"
+Id: "381911f4-b792-43bb-8cd3-aa71c0a416c1"
+
+
+Text: "A command may take a context suffix `#given{...}` or `#using{...}` to supply
+arguments to the referenced item, and refined commands attach adjectives with
+`\(...)::`.
+
+```mlg-fragment
 \axiom.of.extension#given{A := X; B := Y}
+\pythagorean.theorem#using{a := 3; b := 4}
+\logic.$prefix.(f:on{A}, g:to{B})::target.$tail{C}:via{D}(E, F)
+\(injective, surjective)::function:from{A}:to{B}
+\(prime)::integer
+\(f)::[[g]]
 ```
 "
-Id: "4681d9ed-a5b4-411c-b8a4-d5bab49eccab"
+Id: "5ee193b6-0063-417d-a730-aaef6fb95ae1"
 
 
-Text: "Refined commands attach adjectives with `\(...)::`. Infix, prefix, and
-postfix operator commands are written with slashes.
+Text: "Operator commands are written with slashes: `\\:name:/` for spec-style infix
+and `\\.name./` for statement-style infix, and command aliases may be introduced
+with `$name`.
 
 ```mlg-fragment
-\(injective, surjective)::function:from{A}:to{B}
 a \:subset:/ b
-n \.factorial/
+m \.coprime.to./ n
+x \.map.$alias.=={A}:to{B}./ y
 ```
 "
-Id: "b04086bb-a7ae-4690-b452-5a3fc7ae0c2b"
+Id: "b6c481d9-2df3-4549-98ed-626e4ee7786a"
 
 
-Text: "Declarations introduce and type symbols. A trailing `?` in a spec makes it a
-predicate, `is` gives a type, and `\"in\"` gives membership.
+SectionTitle: "Formulation Fragments — Forms, Declarations, and Aliases"
+Id: "4dbe0a11-a217-456c-b52e-e7d334497f0a"
+
+
+Text: "Forms describe the shape of a defined symbol. A form may be a name, a
+callable with placeholders, a tuple, or a set, and it can use prefix, postfix, or
+infix operator syntax.
+
+```mlg-fragment
+g ::= f(x_, y_)
+pair ::= (x, +, y)
+Set ::= {f_(x_, y_)}
+-x_
+x_ !
+neg| x_
+x_ |prime
+x_ |plus| y_
+x_ :|before| y_
+```
+"
+Id: "a81931b0-6ac0-417f-9e11-814af0a861b4"
+
+
+Text: "Declarations introduce and type symbols; `via` records how a symbol is
+viewed as another type; and the three alias arrows create local notation:
+expression aliases (`:=>`), spec-operator aliases (`:->`), and writing aliases
+(`:~>`).
 
 ```mlg-fragment
 x is \real
 a, b \"in\" \integer
 f(x__) ::= y_
-p is? \(prime)::integer
+G is \set via X
+x_, y_ is \type{A} via (x, y)
+f(x_) :=> x + y
+x_ \"in\" X :-> x is \real
+f(x_) :~> f(x)
 ```
 "
-Id: "a08ae4d3-b815-4fce-82a5-82840a1d52fc"
+Id: "ab9a6497-9212-4001-82ed-57ace3a97837"
 
 
-Text: "Set-builder expressions, ordered tuples, and operator expressions round out
-the formulation syntax.
+Text: "Headings use a leading sigil: `\\` for a command signature, none for a
+`[label]`, `@` for an author, `$` for a resource, and `#` for a topic.
 
 ```mlg-fragment
-{n : n is \integer ; n > 0}
-(a, b, c)
-(x + y) * z \:less.than.or.equal:/ w
+\function:on{A}:to{B}
+some.label
+@euclid
+$hardy.wright.number.theory
+#real.analysis
 ```
 "
-Id: "54d47991-a350-4d31-9019-c7ccf65f6551"
-
-
-Text: "Aliases create local notation: expression aliases with `:=>`, spec-operator
-aliases with `:->`, and writing aliases with `:~>`.
-
-```mlg-fragment
-alias: \square{x_} :=> x_ * x_
-capability: x_ \"in\" R :-> x_ is \real
-writing: \norm{v_} :~> \norm{v_}
-```
-"
-Id: "4d1125cd-f37c-489d-bf82-701187679e8e"
+Id: "5756dfcd-5823-4743-b0be-c999222eeda8"
