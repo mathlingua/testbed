@@ -44,7 +44,7 @@ Documented:
 Id: "fb02b92c-b803-414e-b46c-a882237acf3d"
 
 
-Lemma:
+Theorem:
 given: m, n is \set.theoretic.natural.number
 then: m \.comparable./ n
 Documented:
@@ -79,7 +79,7 @@ Documented:
 Id: "68bcb5f8-d1d4-4e0b-ab0b-3b3c3d4e8d4d"
 
 
-Lemma:
+Theorem:
 given: m, n, q is \set.theoretic.natural.number
 then:
 . if: m \:less.than?:/ n

@@ -166,8 +166,8 @@ SectionTitle: "Axioms, Theorems, and Proofs"
 Id: "3fbde878-1ac2-4fda-a6bf-e45abed13e1d"
 
 
-Text: "Theorem-like items — `Axiom:`, `Theorem:`, `Corollary:`, `Lemma:`, and
-`Conjecture:` — share the `given:` / `where:` / `then:` / `iff:` shape and take an
+Text: "Theorem-like items — `Axiom:`, `Theorem:`, and `Corollary:` — share the
+`given:` / `where:` / `then:` / `iff:` shape and take an
 optional command heading. Their head section takes no argument; the result's name
 lives in `Documented:` `called:`, exactly as for definitions.
 
@@ -189,8 +189,8 @@ Documented:
 Id: "65a82e1e-dd38-4788-b7a4-a7d5b82d54c3"
 
 
-Text: "A `Theorem:` may be heading-less. `Lemma:` has the same shape, and
-`Corollary:` adds an `of:` field naming what it follows from.
+Text: "A `Theorem:` may be heading-less, and `Corollary:` adds an `of:` field
+naming what it follows from.
 
 ```mlg
 Theorem:
@@ -198,12 +198,6 @@ given: a, b is \integer
 then: a * b = b * a
 Documented:
 . called: \"Commutativity of Integer Multiplication\"
-
-Lemma:
-given: p is \(prime)::integer
-then: p > 1
-Documented:
-. called: \"Every Prime Exceeds One\"
 
 Corollary:
 of: \"Euclid's Theorem\"
@@ -216,26 +210,6 @@ Documented:
 ```
 "
 Id: "7a9a7278-cea7-43da-ac8a-61660e6e3920"
-
-
-Text: "A `Conjecture:` records an open problem.
-
-```mlg
-[\goldbach.conjecture]
-Conjecture:
-then:
-. forAll: n is \integer
-  where:
-  . n > 2
-  . \two \:divides:/ n
-  then:
-  . exists: p, q is \(prime)::integer
-    suchThat: n = p + q
-Documented:
-. called: \"Goldbach's Conjecture\"
-```
-"
-Id: "588b3633-7c85-4a0a-b061-b34dd55fc55b"
 
 
 SectionTitle: "Clauses"

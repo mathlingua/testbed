@@ -21,7 +21,7 @@ Documented:
 . description: "A set is infinite when it is not finite, that is, when it is equivalent to no natural number."
 Id: "c08206ff-de4f-44c5-bc78-be658fef5be1"
 
-Lemma:
+Theorem:
 given:
 . n is \set.theoretic.natural.number
 . A is \set
