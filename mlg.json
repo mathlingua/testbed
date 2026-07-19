@@ -1,4 +1,5 @@
 {
   "name": "testbed",
-  "version": "2"
+  "version": "2",
+  "print_margin": 80
 }
